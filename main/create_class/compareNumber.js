@@ -1,18 +1,19 @@
 class compareNumber {
-    constructor(answer, input) {
-        this.answer = answer;
-        this.input = input;
-    }
 
     static buildCompareNumber(answer, input) {
-        let countCorrectNumber = 0;
-        const answerArray = this.answer.split('').map(num=>parseInt(num));
-        const inputArray = this.input.split('').map(num=>parseInt(num));
+
+        let countCorrectNmber = 0;
+        const answerArray = answer.split('').map(num=>parseInt(num));
+        const inputArray = input.split('').map(num=>parseInt(num));
+        let countA = answerArray.map((number,index)=>
+            (number === inputArray[index])).reduce((a,b)=>a+b);
         for (let num of inputArray) {
-            if(answerArray.find(number=>number === num))
-                countCorrectNumber ++;
+            if (answerArray.find(number=>number === num))
+                countCorrectNmber++;
         }
-        return countCorrectNumber;
+        let countB = countCorrectNmber - countA;
+        
+        return `${countA}A${countB}B`;
     }
 
 }
