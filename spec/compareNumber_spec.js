@@ -1,10 +1,10 @@
-const main = require('../main/guess_number');
+const compareNumber = require('../main/create_class/compareNumber');
 
 describe('guess_number', function () {
 
     it('compareNumber result:0A4B', function () {
 
-        const result = main.buildCompareNumber('1234', '4321');
+        const result = compareNumber.buildCompareNumber('1234', '4321');
         const expected = '0A4B';
 
         expect(result).toEqual(expected);
@@ -12,7 +12,7 @@ describe('guess_number', function () {
 
     it('compareNumber result:4A0B', function () {
 
-        const result = main.buildCompareNumber('1234', '1234');
+        const result = compareNumber.buildCompareNumber('1234', '1234');
         const expected = '4A0B';
 
         expect(result).toEqual(expected);
@@ -20,7 +20,7 @@ describe('guess_number', function () {
 
     it('compareNumber result:0A0B', function () {
 
-        const result = main.buildCompareNumber('1234', '5678');
+        const result = compareNumber.buildCompareNumber('1234', '5678');
         const expected = '0A0B';
 
         expect(result).toEqual(expected);
@@ -29,7 +29,7 @@ describe('guess_number', function () {
 
     it('compareNumber result:1A2B', function () {
 
-        const result = main.buildCompareNumber('1234', '1543');
+        const result = compareNumber.buildCompareNumber('1234', '1543');
         const expected = '1A2B';
 
         expect(result).toEqual(expected);
